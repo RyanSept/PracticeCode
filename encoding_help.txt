@@ -1,0 +1,19 @@
+﻿def to_unicode_or_bust(
+...         obj, encoding='utf-8'):
+...     if isinstance(obj, basestring):
+...         if not isinstance(obj, unicode):
+...             obj = unicode(obj, encoding)
+...     return obj
+
+f=codecs.open("C:\Python27\output.txt",'r',encoding='utf-8')
+ f.read()
+
+import codecs
+>>> f = codecs.open('/tmp/ivan_utf8.txt', 'w',
+...                 encoding='utf-8')
+...
+>>> f.write(ivan_uni)
+>>> f.close()
+self.rtextbox.insert_text(msg.decode('utf-8'))Clipboard.put(msg.decode('utf-8').encode('utf-16'))﻿
+﻿﻿Here is your text: 蠶豆 mœur hi bye fly this dye
+﻿Here is your text: 蠶豆 mœur hi bye fly this dye﻿﻿

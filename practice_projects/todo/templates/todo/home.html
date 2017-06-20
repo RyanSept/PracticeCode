@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Todo List</title>
+        {%load staticfiles%}
+        <link rel='stylesheet' type="text/css" href="{%static 'todo/style.css'%}"/>
+    </head>
+    <body>
+        <div style="float:right;">
+            <h2>Sort by:</h2>
+            <a href="?order_by=task_name">Name</a><br>
+            <a href="?order_by=creation_date">Date of creation</a><br>
+            <a href="?order_by=deadline">Deadline</a><br>
+            <a href="?order_by=priority">Priority</a><br>
+            <a href="?order_by=completed">Status</a>
+        </div>
+        <ul>
+        {%for t in Task%}
+            <li><a href="{% url 'edit' t.id %}"><h3 style="font-size:85%">{{t.task_name}}</h3><br><span style="font-size:85%"><strong>Description:</strong><em>{{t.description}}</em><br><strong>Deadline:</strong>{{t.deadline}}</span></a></li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'create'%}" class="createBtn">Create a new task</a>
+        
+    </body>
+    <!---tr>
+        <td>Name of task</td>
+        <td>Task description</td>
+        <td>Date of creation</td>
+        <td>Deadline</td>
+        <td>Side notes</td>
+        <td>Priority</td>
+        <td>Completed</td>
+    </tr-->
+    <!---tr>
+        <td>{{t.task_name}}</td>
+        <td>{{t.description}}</td>
+        <td>{{t.creation_date}}</td>
+        <td>{{t.deadline}}</td>
+        <td>{{t.additional_notes}}</td>
+        <td>{{t.get_priority_display}}</td>
+        <td>{{t.completed}}</td>
+    </tr--->
+</html>

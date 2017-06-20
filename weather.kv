@@ -1,0 +1,67 @@
+#: import ListItemButton kivy.uix.listview.ListItemButton
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import main weather
+#: import GestureBox gesture_box.GestureBox
+WeatherRoot:
+    
+<WeatherRoot>:
+    id:weather_root
+    weatherroot:weather_root
+    AddLocationForm:
+        on_right_to_left_line:root.show_current_weather()
+        id:location_form
+        orientation: "vertical" 
+        search_input:search_box
+        search_results:search_results_list
+        BoxLayout:
+            height:'40dp'
+            size_hint_y:None
+            TextInput:
+                id:search_box
+                size_hint_x:50
+                focus:True
+                multiline:False
+                on_text_validate:location_form.search_location() #when enter is pressed 
+            Button:
+                text: "Search"
+                size_hint_x:25
+                on_press:location_form.search_location()
+            Button:
+                text: "Current Location"
+                size_hint_x:25
+        ListView:
+            id: search_results_list
+            adapter:
+                ListAdapter(data=[], cls=main.LocationButton)
+        Button:
+            text:'Cancel'
+            size_hint_y: None
+            height: "40dp"
+            on_press:root.show_current_weather()
+
+<LocationButton>:
+    on_press: app.root.show_current_weather(self.text)
+<CurrentWeather@GestureBox>:
+    on_left_to_right_line:app.root.back()
+    id:currentweather
+    current_weather:currentweather
+    location: ""
+    conditions: None
+    temp: None
+    temp_min: None
+    temp_max: None
+    orientation: "vertical"
+    Label:
+        text: root.location
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+        Button:
+            text: "Add Location"
+        Button:
+            text: "Forecast"
+        Button:
+            text:'Back'
+            on_press:app.root.back()
+   

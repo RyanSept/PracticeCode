@@ -1,0 +1,52 @@
+#:kivy 1.9.0
+
+rps_root:
+
+<rps_root>:
+    result:outcome
+    Image:
+        source:'D:/Users/user/Desktop/PICTURES/rpsbg.jpg'
+        size:self.parent.size
+        allow_stretch:True
+    BoxLayout:
+        center_x: root.width / 2
+        #center_y:root.width/2
+        top:root.top-150
+        size_hint:None,None
+        size:700,200
+        padding:[5,5]
+        Button:
+            disabled:False
+            on_press:root.choicerock()
+            background_color:1,1,1,0
+            Image:
+                source:'D:/Users/user/Desktop/PICTURES/rock.jpg'
+                y:self.parent.y
+                x:self.parent.x
+                size:self.parent.size
+                allow_stretch:True
+        Button:
+            on_press:root.choicepaper()
+            background_color:1,1,1,0
+            Image:
+                source:'D:/Users/user/Desktop/PICTURES/paper.png'
+                y:self.parent.y
+                x:self.parent.x
+                size:self.parent.width,self.parent.height
+                allow_stretch:True
+        Button:
+            text:'Scissors'
+            on_press:root.choicescissors()
+            background_color:1,1,1,0
+            Image:
+                source:'D:/Users/user/Desktop/PICTURES/scissors.png'
+                y:self.parent.y
+                x:self.parent.x
+                size:self.parent.size
+                allow_stretch:True
+    Label:
+        id:outcome
+        text:root.result.text
+        y:root.height-700
+        color: 0,.5,1,1
+        font_size:17

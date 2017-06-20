@@ -1,0 +1,1 @@
+{u'R\u014dmaji': u'Gogy\u014d F\u016bin', u'Name': u'Five Elements Seal\n     [1]', u'Classification': u'F\u016binjutsu', u'Users': u'Orochimaru,', u'Hand seals': u'Technique-specific seal', u'Appears in': u'Anime, Manga, Game', u'Rank': u'A-rank', u'English anime': u'Five Pronged Seal'}

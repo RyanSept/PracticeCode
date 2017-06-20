@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {%load staticfiles%}
+        <link rel="stylesheet" type="text/css" href="{%static 'todo/edit.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'todo/jquery.datetimepicker.css'%}"/>
+        <script type="text/javascript" src="{%static 'todo/jquery.js'%}"></script>
+        <script type="text/javascript" src="{%static 'todo/jquery.datetimepicker.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'todo/edit.js'%}"></script>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+        {% if Task%}
+            <a id="delete" href="{% url 'delete' Task.id %}">Delete</a>
+        {% endif %}
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>

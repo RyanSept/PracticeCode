@@ -1,0 +1,4 @@
+title=ServiceApp
+author=Ryan Marvin
+orientation=portrait
+permissions=ACCESS_WIFI_STATE,ACCOUNT_MANAGER

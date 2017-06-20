@@ -1,0 +1,5 @@
+#make pyfiles accessible
+sudo mkdir /media/pyfiles #before this one check if pyfiles do exist
+sudo mount -t vboxsf pyfiles /media/pyfiles
+#empty trash 
+ rm -rf ~/.local/share/Trash/*
